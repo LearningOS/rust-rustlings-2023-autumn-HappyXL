@@ -66,16 +66,14 @@ impl FromStr for Person {
             return Err(ParsePersonError::NoName);
         }
         let name = form[0];
-        
+
         match form[1].parse::<usize>() {
             Ok(age) => Ok(Person {
                 name: name.into(),
                 age,
             }),
-            Err(e) => Err(ParsePersonError::ParseInt(e)), 
-        
+            Err(e) => Err(ParsePersonError::ParseInt(e)),
         }
-
     }
 }
 

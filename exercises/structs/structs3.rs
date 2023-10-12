@@ -34,7 +34,7 @@ impl Package {
         if self.sender_country != self.recipient_country {
             return true;
         }
-        
+
         false
     }
 

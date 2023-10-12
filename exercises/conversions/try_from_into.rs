@@ -41,10 +41,16 @@ enum IntoColorError {
 impl TryFrom<(i16, i16, i16)> for Color {
     type Error = IntoColorError;
     fn try_from(tuple: (i16, i16, i16)) -> Result<Self, Self::Error> {
-        if tuple.0 < 0 || tuple.0 > 255 || tuple.1 < 0 || tuple.1 > 255 || tuple.2 < 0 || tuple.2 > 255 {
+        if tuple.0 < 0
+            || tuple.0 > 255
+            || tuple.1 < 0
+            || tuple.1 > 255
+            || tuple.2 < 0
+            || tuple.2 > 255
+        {
             return Err(IntoColorError::IntConversion);
         }
-        
+
         Ok(Color {
             red: tuple.0 as u8,
             green: tuple.1 as u8,
@@ -58,7 +64,7 @@ impl TryFrom<[i16; 3]> for Color {
     type Error = IntoColorError;
     fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {
         for color in arr {
-            if color < 0 || color > 255{
+            if color < 0 || color > 255 {
                 return Err(IntoColorError::IntConversion);
             }
         }
@@ -68,9 +74,7 @@ impl TryFrom<[i16; 3]> for Color {
             green: arr[1] as u8,
             blue: arr[2] as u8,
         })
-
     }
-
 }
 
 // Slice implementation

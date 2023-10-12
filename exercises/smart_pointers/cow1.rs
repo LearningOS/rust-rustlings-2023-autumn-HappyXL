@@ -50,7 +50,7 @@ mod tests {
         match abs_all(&mut input) {
             // TODO
             Cow::Borrowed(_) => Ok(()),
-            _ => Err("Expected borrowed value")
+            _ => Err("Expected borrowed value"),
         }
     }
 
@@ -79,7 +79,6 @@ mod tests {
             // TODO
             Cow::Owned(_) => Ok(()),
             _ => Err("Expected owned value"),
-
         }
     }
 }

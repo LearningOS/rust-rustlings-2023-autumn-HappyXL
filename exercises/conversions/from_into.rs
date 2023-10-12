@@ -58,7 +58,7 @@ impl From<&str> for Person {
                 age: age,
             };
         };
-    
+
         Person::default()
     }
 }
